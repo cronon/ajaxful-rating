@@ -58,7 +58,7 @@ module AjaxfulRating # :nodoc:
       stars = []
       width = (show_value / rateable.class.max_stars.to_f) * 100
       li_class = "axr-#{show_value}-#{rateable.class.max_stars}".gsub('.', '_')
-      @css_builder.rule('.ajaxful-rating', :width => (rateable.class.max_stars * 25))
+      @css_builder.rule('.ajaxful-rating', :width => (rateable.class.max_stars * (options[:width]||25))
       @css_builder.rule('.ajaxful-rating.small',
         :width => (rateable.class.max_stars * 10)) if options[:small]
       
